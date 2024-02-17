@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Package Sorter</title>
+    <style>
+      /* Basic CSS for styling the form */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .container {
+        display: flex;
+      }
+      .form-group {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        padding: 8px;
+        width: 200px;
+      }
+      button {
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+      .result {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Package Sorter</h2>
+    <div class="container">
+      <div id="packageForm">
+        <form>
+          <div class="form-group">
+            <label for="width">Width (cm):</label>
+            <input type="number" id="width" required />
+          </div>
+          <div class="form-group">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" required />
+          </div>
+          <div class="form-group">
+            <label for="length">Length (cm):</label>
+            <input type="number" id="length" required />
+          </div>
+          <div class="form-group">
+            <label for="mass">Mass (kg):</label>
+            <input type="number" id="mass" required />
+          </div>
+          <button type="submit">Sort Package</button>
+        </form>
+        <div id="result" class="result"></div>
+      </div>
+      <pre>
+        Manual Test Cases
+        Standard Package
+
+        Input: Width = 50 cm, Height = 50 cm, Length = 50 cm, Mass = 10 kg
+        Expected Output: Package Stack: STANDARD
+        Special Package (Bulky by Volume)
+
+        Input: Width = 100 cm, Height = 100 cm, Length = 100 cm, Mass = 10 kg
+        Expected Output: Package Stack: SPECIAL
+        Special Package (Bulky by Dimension)
+
+        Input: Width = 150 cm, Height = 50 cm, Length = 50 cm, Mass = 10 kg
+        Expected Output: Package Stack: SPECIAL
+        Special Package (Heavy)
+
+        Input: Width = 50 cm, Height = 50 cm, Length = 50 cm, Mass = 20 kg
+        Expected Output: Package Stack: SPECIAL
+        Rejected Package (Bulky and Heavy)
+
+        Input: Width = 150 cm, Height = 150 cm, Length = 150 cm, Mass = 20 kg
+        Expected Output: Package Stack: REJECTED
+        Invalid Input (Negative Dimension)
+
+        Input: Width = -50 cm, Height = 50 cm, Length = 50 cm, Mass = 10 kg
+        Expected Output: Package Stack: INVALID
+        Invalid Input (Non-numeric)
+    </pre
+      >
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
